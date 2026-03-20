@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.suplz.aichat" />
+                  <option name="mobileSdkAppId" value="1:400413949705:android:a3a641ff5c6ae6e9161dd8" />
+                  <option name="projectId" value="aichat-avito" />
+                  <option name="projectNumber" value="400413949705" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
