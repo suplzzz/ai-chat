@@ -1,4 +1,4 @@
-package com.suplz.aichat.ui.theme
+package com.suplz.aichat.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
