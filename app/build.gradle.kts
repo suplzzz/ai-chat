@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -8,11 +10,19 @@ plugins {
     alias(libs.plugins.google.services)
 }
 
+val keystoreProperties = Properties().apply {
+    val propsFile = rootProject.file("keystore.properties")
+    if (propsFile.exists()) {
+        propsFile.inputStream().use { load(it) }
+    }
+}
+
 android {
     namespace = "com.suplz.aichat"
     compileSdk {
         version = release(36)
     }
+
 
     defaultConfig {
         applicationId = "com.suplz.aichat"
@@ -22,10 +32,23 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val gigaChatKey = keystoreProperties.getProperty("GIGACHAT_AUTH_KEY") ?: ""
+        val s3Endpoint = keystoreProperties.getProperty("S3_ENDPOINT") ?: ""
+        val s3Bucket = keystoreProperties.getProperty("S3_BUCKET_NAME") ?: ""
+        val s3Access = keystoreProperties.getProperty("S3_ACCESS_KEY") ?: ""
+        val s3Secret = keystoreProperties.getProperty("S3_SECRET_KEY") ?: ""
+
+        buildConfigField("String", "GIGACHAT_AUTH_KEY", "\"$gigaChatKey\"")
+        buildConfigField("String", "S3_ENDPOINT", "\"$s3Endpoint\"")
+        buildConfigField("String", "S3_BUCKET_NAME", "\"$s3Bucket\"")
+        buildConfigField("String", "S3_ACCESS_KEY", "\"$s3Access\"")
+        buildConfigField("String", "S3_SECRET_KEY", "\"$s3Secret\"")
     }
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("debug") //костыль для билда релизной сборки
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -39,6 +62,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     kotlin {
         compilerOptions {
