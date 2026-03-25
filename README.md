@@ -10,7 +10,7 @@
 
 | Главная | Профиль | Изображения | Чат |
 |:---:|:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/78f6e27e-95d6-4af6-a562-8a650a63f793" width="250"/> | <img src="https://github.com/user-attachments/assets/2fc0e4a4-a11a-4e53-adde-22d9b9a27cd5" width="250"/> | <img src="https://github.com/user-attachments/assets/b22f96fc-2902-4b65-bad4-cac136a17b93" width="250"/> | <img src="https://github.com/user-attachments/assets/a9bee753-e207-403f-b4b8-3b161138068d" width="250"/> |
+| <img src="https://github.com/user-attachments/assets/78f6e27e-95d6-4af6-a562-8a650a63f793" width="250" height="540"/> | <img src="https://github.com/user-attachments/assets/2fc0e4a4-a11a-4e53-adde-22d9b9a27cd5" width="250" height="540"/> | <img src="https://github.com/user-attachments/assets/b22f96fc-2902-4b65-bad4-cac136a17b93" width="250" height="540"/> | <img src="https://github.com/user-attachments/assets/a9bee753-e207-403f-b4b8-3b161138068d" width="250" height="540"/> |
 
 ## Реализованный функционал
 
